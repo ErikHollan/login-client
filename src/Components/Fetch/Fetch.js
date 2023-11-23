@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const loginRequest = async (email, password) => {
- 
+
     const requestOptions = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -21,7 +21,6 @@ export const loginRequest = async (email, password) => {
     }
     return responseObject
 };
-
 
 export const registrationRequest = async (firstname, lastname, password, email) => {
 
@@ -42,9 +41,8 @@ export const registrationRequest = async (firstname, lastname, password, email) 
 
 };
 
-
 export const getUserEmailFromToken = async (token) => {
-    const response = await fetch(BASE_URL +'/check?token='+token);
+    const response = await fetch(BASE_URL + '/check?token=' + token);
     const responseObject = await response.json();
     return responseObject;
 };

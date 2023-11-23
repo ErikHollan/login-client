@@ -7,7 +7,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { loginRequest, registrationRequest } from '../Fetch/Fetch';
 import { useNavigate } from "react-router-dom"
-import { ProfilePage } from '../ProfilePage/ProfilePage';
 
 export const LoginSignup = () => {
     const navigate = useNavigate()
@@ -29,7 +28,6 @@ export const LoginSignup = () => {
 
         const loginResponseObject = await loginRequest(email, password);
         if (loginResponseObject.status === 200) {
-            console.log("TRYING TO NAVIGATE")
             setLoginSuccess(true)
             navigate('/profile')
         } else {
@@ -40,7 +38,6 @@ export const LoginSignup = () => {
 
     const handleSignup = async (firstName, lastName, password, email) => {
         setLoginResponseMessage("")
-
 
         const signupResponseObject = await registrationRequest(firstName, lastName, password, email);
         setSignupResponseMessage(signupResponseObject.message);
@@ -62,9 +59,7 @@ export const LoginSignup = () => {
         setLastName("");
         setEmail("");
         setPassword("");
-
     }
-
 
     return (
         <div className="container">

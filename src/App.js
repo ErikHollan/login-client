@@ -1,11 +1,10 @@
 import './App.css';
-import { BrowserRouter, Routes, Route, useNavigate} from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 import { LoginSignup } from './Components/LoginSignup/LoginSignup';
 import { ProfilePage } from './Components/ProfilePage/ProfilePage';
 
 
 function App() {
-
 
   return (
     <div>
